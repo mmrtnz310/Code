@@ -1,0 +1,109 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{proModalCtrl.heading}}</h3>
+</div>
+
+<div class="modal-body">
+    <form class="form-horizontal col-lg-9" role="form" name="proModalCtrl.profileForm" id="profileForm"
+          ng-submit="proModalCtrl.onSubmit()"
+          ng-model="proModalCtrl.profileForm" novalidate>
+        <div class="form-group ng-class:{'has-error':proModalCtrl.showProfileErrors && !proModalCtrl.profileForm.firstName.$valid}">
+            <label class="control-label col-sm-4" for="firstName">First Name:</label>
+            <div class="col-sm-7">
+                <input class="form-control"
+                       placeholder="John"
+                       name="firstName"
+                       id="firstName"
+                       ng-model="proModalCtrl.profile.firstName"
+                       ng-minlength="2"
+                       required>
+                <div role="alert" class="help-inline has-error">
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.firstName.$error.required">Please Enter a first name.</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.firstName.$error.minlength">First name must be at least 2 characters</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ng-class:{'has-error':proModalCtrl.showProfileErrors && !proModalCtrl.profileForm.lastName.$valid}">
+            <label class="control-label col-sm-4" for="lastName">Last Name:</label>
+            <div class="col-sm-7">
+                <input class="form-control"
+                       placeholder="Smith"
+                       name="lastName"
+                       id="lastName"
+                       ng-model="proModalCtrl.profile.lastName"
+                       ng-minlength="2"
+                       required>
+                <div role="alert" class="help-inline has-error">
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.lastName.$error.required">Please Enter a last name.</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.lastName.$error.minlength">Last name must be at least 2 characters</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ng-class:{'has-error':proModalCtrl.showProfileErrors && !proModalCtrl.profileForm.phone.$valid}">
+            <label class="control-label col-sm-4" for="phone">Number:</label>
+            <div class="col-sm-7">
+                <input class="form-control"
+                       placeholder="(310)555-1234"
+                       name="phone"
+                       id="phone"
+                       ng-model="proModalCtrl.profile.phone"
+                       ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
+                       ng-maxlength="13"
+                       required>
+                <div role="alert" class="help-inline has-error">
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.phone.$error.required">Please enter a valid phone number.</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.phone.$error.maxlength">Please double check the phone number.(Must not contain spaces)</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.phone.$error.pattern">Please enter phone in the following format: (310)555-1234 </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ng-class:{'has-error':proModalCtrl.showProfileErrors && !proModalCtrl.profileForm.extension.$valid}">
+            <label class="control-label col-sm-4" for="extension">Ext:</label>
+            <div class="col-sm-7">
+                <input class="form-control col-sm-2"
+                       placeholder="1234"
+                       name="extension"
+                       id="extension"
+                       ng-model="proModalCtrl.profile.extension"
+                       ng-pattern="/^[0-9]{0,4}$/"
+                       ng-maxlength="4">
+                <div role="alert" class="help-inline has-error">
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.extension.$error.required">Please enter a valid extension</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.extension.$error.maxlength">Extension cant be longer than 4 characters.</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.extension.$error.pattern">Extension should only be digits.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ng-class:{'has-error':proModalCtrl.showProfileErrors && !proModalCtrl.profileForm.userName.$valid}">
+            <label class="control-label col-sm-4" for="userName">Username:</label>
+            <div class="col-sm-7">
+                <input class="form-control"
+                       placeholder="DragonSlayer52"
+                       name="userName"
+                       id="userName"
+                       ng-model="proModalCtrl.profile.userName"
+                       ng-minlength="2"
+                       required>
+                <div role="alert" class="help-inline has-error">
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.userName.$error.required">The username is required!</span>
+                    <span class="error" ng-show="proModalCtrl.showProfileErrors && proModalCtrl.profileForm.userName.$error.minlength">Username must be at least 2 characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="email">Email:</label>
+            <div class="col-sm-7">
+                <h4>{{proModalCtrl.profile.email}}</h4>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn" id="cmdSubmitUpdate" ng-click="proModalCtrl.onUpdateSubmit(proModalCtrl.profile)">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="proModalCtrl.onCancel()">Cancel</button>
+</div>
