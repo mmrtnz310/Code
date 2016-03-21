@@ -2,37 +2,6 @@
     "use strict";
 
     angular.module(APPNAME)
-        .controller('clientProfileTabController', ClientProfileTabController);
-
-    ClientProfileTabController.$inject = ['$scope', '$baseController'];
-
-    function ClientProfileTabController(
-        $scope
-      , $baseController) {
-
-        var vm = this;
-        $baseController.merge(vm, $baseController);
-        vm.$scope = $scope;
-        //vm.notify = vm.$contactsService.getNotifier($scope);
-        vm.fireEvent = _fireEvent;
-
-        render();
-
-        function render() {
-            vm.fireEvent(0,'tabChanged')
-        }
-        function _fireEvent(idx, eventName) {
-
-            vm.$systemEventService.broadcast(eventName, { tabToSelect: idx });
-        }
-
-    }
-})();
-
-(function () {
-    "use strict";
-
-    angular.module(APPNAME)
         .controller('userProfileController', UserProfileController);
 
     UserProfileController.$inject = ['$scope', '$baseController', '$userProfileService', '$uibModal'];
