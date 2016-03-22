@@ -1,25 +1,25 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Sabio.Web.Models;
+using MGM.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity.Owin;
-using Sabio.Web.Exceptions;
+using MGM.Web.Exceptions;
 using Microsoft.Owin.Security;
 using System.Security.Claims;
 using System.Data.SqlClient;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Core.Services;
+using MGM.Web.Models.Requests;
+using MGM.Web.Core.Services;
 using System.Data;
-using Sabio.Web.Models.Requests.Users;
-using Sabio.Web.Domain;
-using Sabio.Web.Domain.Accounts;
-using Sabio.Data;
-using Sabio.Web.Domain.User;
+using MGM.Web.Models.Requests.Users;
+using MGM.Web.Domain;
+using MGM.Web.Domain.Accounts;
+using MGM.Data;
+using MGM.Web.Domain.User;
 
-namespace Sabio.Web.Services
+namespace MGM.Web.Services
 {
     public class UserService : BaseService
         , IUserService
