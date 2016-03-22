@@ -1,8 +1,8 @@
-﻿using Sabio.Web.Domain.Employers;
-using Sabio.Web.Models;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Models.Responses;
-using Sabio.Web.Services;
+﻿using MGM.Web.Domain.Employers;
+using MGM.Web.Models;
+using MGM.Web.Models.Requests;
+using MGM.Web.Models.Responses;
+using MGM.Web.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Sabio.Web.Controllers.Api.Employers
+namespace MGM.Web.Controllers.Api.Employers
 {
     [RoutePrefix("api/Employers")]
     public class EmployersApiController : ApiController
