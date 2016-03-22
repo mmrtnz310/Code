@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using Sabio.Web.Core;
-using Sabio.Web.Domain;
-using Sabio.Web.Models;
-using Sabio.Web.Models.Responses;
-using Sabio.Web.Services;
+using MGM.Web.Core;
+using MGM.Web.Domain;
+using MGM.Web.Models;
+using MGM.Web.Models.Responses;
+using MGM.Web.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Sabio.Web.Controllers.Api
+namespace MGM.Web.Controllers.Api
 {
 
     [RoutePrefix("api/admin")]
