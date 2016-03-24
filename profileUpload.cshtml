@@ -135,9 +135,9 @@
 
 
 @section pageinitScripts{
-    <script src="~/Scripts/sabio/sabio.module.paging.js"></script>
+    <script src="~/Scripts/mgm/mgm.module.paging.js"></script>
     <script type="text/javascript" src="~/assets/js/dropzone.js"></script>
-    <script src="~/Scripts/sabio/sabio.module.ngDropZone.js"></script>
+    <script src="~/Scripts/mgm/mgm.module.ngDropZone.js"></script>
     <script src="~/Scripts/bower_components/ngDropZone.js"></script>
     <script src="~/Scripts/sweetalert-dev.js"></script>
 }
@@ -146,7 +146,7 @@
 @section scripts
 {
     <script src="~/Scripts/paging.js"></script>
-    <script src="~/Scripts/sabio/services/sabio.services.files.js"></script>
+    <script src="~/Scripts/mgm/services/mgm.services.files.js"></script>
     <script type="text/javascript">
 
         //File Services Factory
@@ -156,13 +156,13 @@
             angular.module(APPNAME)
                  .factory('$filesService', filesServiceFactory);
 
-            filesServiceFactory.$inject = ['$baseService', '$sabio'];    //  $sabio is a reference to sabio.page object which is created in sabio.js
+            filesServiceFactory.$inject = ['$baseService', '$mgm'];    //  $mgm is a reference to mgm.page object which is created in mgm.js
 
-            function filesServiceFactory($baseService, $sabio) {
+            function filesServiceFactory($baseService, $mgm) {
 
-                var aSabioServiceObject = sabio.services.files;
+                var aMgmServiceObject = mgm.services.files;
 
-                var newService = $baseService.merge(true, {}, aSabioServiceObject, $baseService);
+                var newService = $baseService.merge(true, {}, aMgmServiceObject, $baseService);
 
                 return newService;
             }
@@ -175,9 +175,9 @@
 
             angular.module(APPNAME)
                  .factory('$SweetAlert', SweetAlert);
-            SweetAlert.$inject = ['$baseService', '$sabio', '$rootScope'];    //  $sabio is a reference to sabio.page object which is created in sabio.js
+            SweetAlert.$inject = ['$baseService', '$mgm', '$rootScope'];    //  $mgm is a reference to mgm.page object which is created in mgm.js
             var swal = window.swal;
-            function SweetAlert($baseService, $sabio, $rootScope) {
+            function SweetAlert($baseService, $mgm, $rootScope) {
                 //public methods
                 var self = {
 
