@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using Sabio.Web.Core;
-using Sabio.Web.Domain;
-using Sabio.Web.Exceptions;
-using Sabio.Web.Models;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Models.Requests.Public;
-using Sabio.Web.Models.Requests.Tests;
-using Sabio.Web.Models.Responses;
-using Sabio.Web.Services;
-using Sabio.Web.Services.Tests;
+using MGM.Web.Core;
+using MGM.Web.Domain;
+using MGM.Web.Exceptions;
+using MGM.Web.Models;
+using MGM.Web.Models.Requests;
+using MGM.Web.Models.Requests.Public;
+using MGM.Web.Models.Requests.Tests;
+using MGM.Web.Models.Responses;
+using MGM.Web.Services;
+using MGM.Web.Services.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Sabio.Web.Controllers.Api
+namespace MGM.Web.Controllers.Api
 {
     [RoutePrefix("api/public")]
     [AllowAnonymous]
